@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Assignment 3: A Structured HTML page</title>
+    <meta charset="UTF-8" />
+    <style>
+      html {
+        background-color: rgb(8, 65, 42);
+      }
+
+      header {
+        margin: 1%;
+        padding: 1%;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+
+      hr {
+        height: 2px;
+        border-width: 0;
+        color: gray;
+        background-color: gray;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      nav {
+        background-color: rgb(145, 124, 10);
+        padding-left: 10%;
+        width: 90%;
+        height: 60px;
+        margin-bottom: 23px;
+        /* position: sticky; */
+      }
+
+      nav a.button,
+      nav input {
+        color: white;
+        padding: 21px;
+        float: left;
+        /* border-width: px; */
+        border: white;
+      }
+
+      nav input {
+        float: right;
+        width: 24%;
+        height: 18px;
+        color: black;
+        font-size: 20px;
+      }
+
+      .button:hover {
+        background-color: rgb(184, 159, 21);
+        color: black;
+        font-weight: bold;
+      }
+
+      aside {
+        background-color: rgba(255, 255, 255, 0.404);
+        text-align: center;
+        width: 25%;
+        height: 500px;
+        margin-bottom: 75px;
+      }
+
+      .menu-left {
+        float: left;
+      }
+
+      .menu-right {
+        float: right;
+        overflow: hidden;
+      }
+
+      .menu-right img {
+        margin-left: -40%;
+        height: 500px;
+      }
+
+      .menu-right h2 {
+        position: sticky;
+        top: 0;
+      }
+
+      /* footer {
+        background-color: rgb(145, 124, 10);
+        text-align: right;
+        color: antiquewhite;
+        height: 75px;
+        width: 90%;
+        /* position: absolute; */
+      /* padding-right: 10%;
+      } */
+
+      footer a {
+        float: right;
+      }
+
+      form {
+        color: white;
+      }
+
+      .form-border {
+        padding: 10%;
+        overflow: auto;
+        background-color: rgb(10, 40, 28);
+      }
+
+      div {
+        margin: 5%;
+      }
+
+      .title {
+        background-color: rgb(249, 255, 248);
+        margin: 5%;
+        padding: 1%;
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .title-text {
+        margin-left: 45%;
+      }
+
+      .title-text p {
+        font-size: 20px;
+        color: rgb(145, 124, 10);
+      }
+
+      a img {
+        float: left;
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+
+      section {
+        position: relative;
+      }
+      article {
+        /* padding-top: 5%;
+        padding-left: 400px; */
+        height: 500px;
+        color: rgb(246, 237, 221);
+        position: absolute;
+        left: 30%;
+        right: 30%;
+        overflow-y: auto;
+      }
+
+      article p {
+        text-align: justify;
+        text-justify: inter-word;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="title">
+        <a href="index.html">
+          <img
+            style="float: left; margin-left: 10%; margin-right: 10%"
+            src="https://seeklogo.com/images/S/starbucks-logo-BFBFE6C3A3-seeklogo.com.png"
+            alt="Starbuck logo"
+          />
+        </a>
+        <div class="title-text">
+          <h1>STARBUCKS</h1>
+          <p>You've come to the right place.</p>
+        </div>
+      </div>
+    </header>
+
+    <nav>
+      <a class="button" href="home.html">HOME</a>
+      <a class="button" href="about.html">ABOUT</a>
+      <form action="" method="get">
+        <input name="search for" type="text" placeholder="Search..." />
+        <input type="submit" hidden />
+      </form>
+    </nav>
+
+    <section>
+      <aside class="menu-left">
+        <form action="" method="post">
+          <div class="form-border">
+            <h2>Login</h2>
+
+            <hr />
+
+            <div>
+              <label for="uname">Username</label>
+              <input
+                type="text"
+                id="uname"
+                name="username"
+                placeholder="Type here..."
+              />
+            </div>
+
+            <div>
+              <label for="pword">Password</label>
+              <input
+                type="password"
+                id="pword"
+                name="password"
+                placeholder="Type here..."
+              />
+            </div>
+
+            <input type="Submit" value="Login" />
+          </div>
+        </form>
+      </aside>
+
+      <aside class="menu-right">
+        <img
+          src="https://athome.starbucks.com/sites/default/files/styles/story_banner_large/public/2021-08/CAH_AboutUs_Header_2880x1660-%281%29.jpg?h=cf77c377&itok=73y5HNhY"
+        />
+      </aside>
+
+      <article>
+        <h2>When Was Starbucks Founded?</h2>
+        <div>
+          <p>
+            When the first Starbucks opened in 1971, our company was a single
+            store in Seattle's historic Pike Place Market. From just a narrow
+            storefront, Starbucks offered some of the world's finest
+            fresh-roasted whole bean coffees. The name, inspired by Moby Dick,
+            evoked the romance of the high seas and the seafaring tradition of
+            the early coffee traders.
+          </p>
+          <p>
+            In 1981, Howard Schultz (Starbucks former chairman, president and
+            chief executive officer) first walked into a Starbucks store. From
+            his first cup of Sumatra, Howard was drawn into Starbucks and joined
+            a year later.
+          </p>
+          <p>
+            In 1983, Howard traveled to Italy and became captivated with Italian
+            coffee bars and the romance of the coffee experience. He had a
+            vision to bring the Italian café tradition back to the United
+            States. He wanted to create a place for conversation and a sense of
+            community—a third place between work and home. He left the company
+            for a short period of time to start his own Il Giornale cafés and
+            returned in August 1987 to purchase Starbucks with the help of local
+            investors.
+          </p>
+        </div>
+        <p>This is a sentence.</p>
+      </article>
+    </section>
+
+    <!-- <footer>
+      <p class="copyright">Copyright &copy; 2027 by The Code Magazine</p>
+      <a>Contact Us</a>
+    </footer> -->
+  </body>
+</html>

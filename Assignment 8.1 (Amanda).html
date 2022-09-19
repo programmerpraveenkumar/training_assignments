@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Assignment 8.1: Post method</title>
+
+    <style>
+      #server_response {
+        background-color: aqua;
+      }
+    </style>
+    <script type="text/javascript">
+      function postAPI() {
+        let nameValue = document.getElementById("name").value;
+        let jobValue = document.getElementById("job").value;
+        if (nameValue.trim() == "") {
+          alert("Please enter a name");
+        } else if (jobValue.trim() == "") {
+          alert("Please enter a job");
+        } else {
+          let param = {
+            name: nameValue,
+            job: jobValue,
+          };
+          fetch("https://reqres.in/api/users", {
+            method: "POST",
+            body: JSON.stringify(param),
+            headers: {
+              "content-type": "application/json", // we are sending json data, this ia mandatory if we are passing a json request
+              // server will understand you are sending json data and you are expecting json data (must include if integrating the rest API)
+              token: "a token",
+              user_id: "321",
+            },
+          }) // body is for sending the data to server in POST
+            .then((response) => response.json())
+            .then((responseTwo) => {
+              console.log(responseTwo);
+
+              let html = "";
+
+              for (obj in responseTwo) {
+                html += "<div>" + obj + ": " + responseTwo[obj] + "</div>";
+              }
+              document.getElementById("server_response").innerHTML = html;
+            })
+            .catch((errorMessage) => {
+              console.log(errorMessage);
+            });
+          document.getElementById("name").value = "";
+          document.getElementById("job").value = "";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="server_response"></div>
+    <input id="name" type="text" placeholder="Enter Name" />
+    <input id="job" type="text" placeholder="Enter Job" />
+
+    <button onclick="postAPI()">Click to call post API</button>
+  </body>
+</html>

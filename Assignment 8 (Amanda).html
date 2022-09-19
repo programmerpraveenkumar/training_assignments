@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Assignment 8: Get Method</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <style>
+      div.picture,
+      div.name,
+      div.email,
+      div.id {
+        text-align: center;
+      }
+      button,
+      select {
+        margin: 10px;
+      }
+      /* .name {
+        width: 20%;
+        padding: 10px;
+        background-color: aqua;
+        text-align: center;
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+      }
+      .email {
+        width: 20%;
+        background-color: antiquewhite;
+        display: inline-block;
+        text-align: center;
+        position: absolute;
+        padding: 10px;
+        top: 45px;
+      }
+
+      .person {
+        position: relative;
+      } */
+    </style>
+    <script type="text/javascript">
+      function callAPI() {
+        let pageNumber = document.getElementById("page").value;
+        document.getElementById("server_response").innerHTML = "";
+        fetch("https://reqres.in/api/users?page=" + pageNumber, {
+          method: "GET",
+        })
+          .then((response) => response.json()) // first then is for fetch. if server sends text data, put response.text()
+          .then((responseTwo) => {
+            // second then is for the json
+
+            let userList = responseTwo["data"];
+            if (userList == "") {
+              document.getElementById("server_response").innerHTML =
+                "No Data Found";
+              setTimeout(() => {
+                alert("No Data Found!");
+              }, 1000);
+              //
+            } else {
+              let html2 = `<div class='person row' ><div class='id col-1'>id</div><div class='picture col-3'>avatar</div><div class='name col-4'>fullname</div><div class='email col-4'>email</div></div><hr>`;
+              for (let obj in userList) {
+                let person = userList[obj];
+                let identity = person["id"];
+                let avatar = person["avatar"];
+                let first = person["first_name"];
+                let last = person["last_name"];
+                let email = person["email"];
+                html2 += `<div class='person row' ><div class='id col-1'>${identity}</div><div class='picture col-3'><img class='avatar' src='${avatar}'/></div><div class='name col-4'>${first} ${last}</div><div class='email col-4'>${email}</div></div><hr>`;
+              }
+              document.getElementById("server_response").innerHTML = html2;
+            }
+          })
+          .catch((errorMessage) => {});
+      }
+    </script>
+  </head>
+  <body>
+    <p id="noOfPages"></p>
+    <select onchange="callAPI()" name="page" id="page"></select>
+
+    <button onclick="callAPI()">Click to Send data</button>
+    <div id="server_response"></div>
+    <script>
+      fetch("https://reqres.in/api/users?page=2", {
+        method: "GET",
+      })
+        .then((response) => response.json()) // first then is for fetch. if server sends text data, put response.text()
+        .then((responseTwo) => {
+          var maxPage = parseInt(responseTwo["page"]);
+          var htmlButton = "";
+
+          // for making the max page to be the number of pages in server
+          // for (let i = 1; i <= maxPage; i++) {
+          for (let i = 1; i <= 4; i++) {
+            // now hardcoded to 4 pages
+            htmlButton += '<option value="' + i + '">Page ' + i + "</option>";
+          }
+          document.getElementById("page").innerHTML = htmlButton;
+        })
+        .catch((errorMessage) => {});
+    </script>
+  </body>
+</html>

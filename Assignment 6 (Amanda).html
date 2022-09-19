@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assignment 6:</title>
+    <script>
+      // declare the index array
+      let myArray = [];
+      var mySecondArray = [];
+
+      function addToArray(value) {
+        document.write("Adding new element: " + value);
+        document.write("<br>");
+
+        myArray.push(value);
+        mySecondArray.push(value);
+
+        document.write("myArray: " + myArray);
+        document.write("<br>");
+        document.write("mySecondArray: " + mySecondArray);
+        document.write("<hr>");
+
+        console.log(myArray);
+        console.log(mySecondArray);
+      }
+
+      function objectMethod() {
+        // declaring an object array
+        let objectDetails = {
+          k1: "Joy",
+          k2: "Peace",
+          kelp: "Honor",
+          seaweed: "Pleasure",
+        };
+        // returning the object array from the method
+        return objectDetails;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Index Array Method</h2>
+    <script>
+      addToArray("ice");
+      addToArray("bees");
+      addToArray(123);
+      addToArray([321, 212, "bears"]); // adding an index array to the index arrays
+      addToArray({ key1: "lion", key2: "happy" }); // trying to an object array to index array
+      document.write(mySecondArray[4]["key2"]);
+
+      // iterating through the index array
+      for (let index in myArray) {
+        console.log(index + " - " + myArray[index]);
+      }
+
+      //iterating through the object in position 4 of myArray
+      for (let obj in myArray[4]) {
+        console.log(obj + " - " + myArray[4][obj]);
+      }
+    </script>
+    <hr />
+    <h2>Object Array Method</h2>
+    <script>
+      var myObject = objectMethod();
+      // document.write(myObject);
+      console.log(myObject); // show the object array in the console
+      // loop to show all the keys and values in the object array
+      for (let obj in myObject) {
+        console.log(obj + ": " + myObject[obj]);
+        document.write(obj + ": " + myObject[obj]);
+        document.write("<br>");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Assignment 3: A Structured HTML page</title>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        background-color: rgb(8, 65, 42);
+      }
+      header {
+        background-color: rgb(249, 255, 248);
+        height: 300px;
+        width: 78%;
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin: 7%;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        overflow: hidden;
+      }
+      nav {
+        background-color: rgb(145, 124, 10);
+        height: 60px;
+        width: 75%;
+        margin-bottom: 25px;
+        padding-left: 25%;
+        overflow-y: hidden;
+        position: sticky;
+        top: 0;
+        font-family: "Courier New", Courier, monospace;
+      }
+      section {
+        height: 1000px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      .left-panel {
+        /* background-color: rgba(255, 255, 255, 0.404); */
+        width: 25%;
+        height: 100%;
+        float: left;
+        overflow: hidden;
+      }
+      .right-panel {
+        /* background-color: rgba(255, 255, 255, 0.502); */
+        width: 25%;
+        height: 100%;
+        float: right;
+        overflow: hidden;
+      }
+      article {
+        /* background-color: brown; */
+        color: whitesmoke;
+        width: 46%;
+        height: 100%;
+        margin-left: 25%;
+        padding-left: 2%;
+        padding-right: 2%;
+        overflow: auto;
+      }
+
+      article p {
+        line-height: 30px;
+      }
+      footer {
+        background-color: rgb(13, 28, 14);
+        color: rgb(145, 124, 10);
+        width: 100%;
+        /* height: 50%; */
+        text-align: right;
+        padding-top: 50px;
+      }
+
+      header p {
+        font-size: 20px;
+        color: rgb(145, 124, 10);
+      }
+
+      section.footer {
+        height: 50px;
+      }
+
+      .right-panel img {
+        margin-left: -80%;
+        height: 1000px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .button:hover {
+        background-color: rgb(184, 159, 21);
+        color: black;
+        font-weight: bold;
+      }
+
+      nav a.button {
+        color: white;
+        padding: 19px;
+        float: left;
+        width: 70px;
+        text-align: center;
+        font-size: 20px;
+      }
+
+      nav input {
+        color: white;
+        padding: 19px;
+        float: right;
+        width: 29%;
+        height: 18px;
+        color: black;
+        font-size: 20px;
+      }
+
+      .disappearing {
+        color: rgb(249, 255, 248);
+      }
+      .disappearing:hover {
+        color: rgb(145, 124, 10);
+      }
+      .form-border {
+        color: whitesmoke;
+        text-align: center;
+        margin: 5%;
+        padding: 10%;
+        overflow: auto;
+        background-color: rgb(10, 40, 28);
+      }
+      .form-border h2 {
+        color: rgb(145, 124, 10);
+      }
+      .form-border div {
+        padding-bottom: 10px;
+      }
+      .related-articles {
+        margin-left: 30px;
+        margin-right: 30px;
+        color: whitesmoke;
+      }
+      hr {
+        height: 2px;
+        border-width: 0;
+        color: rgb(145, 124, 10);
+        background-color: rgb(145, 124, 10);
+      }
+
+      li a {
+        color: antiquewhite;
+      }
+      li a:hover {
+        text-decoration: underline;
+      }
+      .related-articles img {
+        float: left;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="home.html">
+        <img
+          style="float: left; margin-left: 10%; margin-right: 10%"
+          src="https://seeklogo.com/images/S/starbucks-logo-BFBFE6C3A3-seeklogo.com.png"
+          alt="Starbuck logo"
+        />
+      </a>
+      <h1>STARBUCKS</h1>
+      <p>You've come to the right place.</p>
+      <p>Click on the icon to go back home.</p>
+      <p class="disappearing">You're still here?</p>
+      <p class="disappearing">Scroll down instead...</p>
+      <p class="disappearing">I promise there is nothing else to see here :)</p>
+    </header>
+
+    <nav>
+      <a class="button" href="home.html">HOME</a>
+      <a
+        class="button"
+        style="
+          background-color: rgb(184, 159, 21);
+          color: black;
+          font-weight: bold;
+          height: 22px;
+        "
+        href="#"
+        >ABOUT</a
+      >
+      <a class="button" href="shop.html">MENU</a>
+      <form action="" method="get">
+        <input name="search for" type="text" placeholder="Search..." />
+        <input type="submit" hidden />
+      </form>
+    </nav>
+
+    <section>
+      <aside class="left-panel">
+        <form action="" method="post">
+          <div class="form-border">
+            <h2>Login</h2>
+
+            <hr />
+
+            <div>
+              <label for="uname">Username</label>
+              <input
+                type="text"
+                id="uname"
+                name="username"
+                placeholder="Type here..."
+              />
+            </div>
+
+            <div>
+              <label for="pword">Password</label>
+              <input
+                type="password"
+                id="pword"
+                name="password"
+                placeholder="Type here..."
+              />
+            </div>
+
+            <input type="Submit" value="Login" />
+          </div>
+        </form>
+
+        <div class="related-articles">
+          <h3>Related Articles</h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.inc.com/jason-aten/3-scientific-reasons-coffee-makes-you-happier-more-productive.html"
+                >Coffee Makes You Happier</a
+              >
+            </li>
+          </ul>
+          <img
+            src="https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/getty_516722846_2000133420009280358_jkvfa2.jpg"
+          />
+          <ul>
+            <li>
+              <a
+                href="https://expatliving.sg/local-coffee-in-singapore-all-you-need-to-know-about-kopi/"
+                >Coffee Types Explained</a
+              >
+            </li>
+          </ul>
+          <img
+            src="https://expatliving.sg/wp-content/uploads/2016/07/Kopi.jpg"
+            alt="Singaporean Kopi (coffee)"
+          />
+        </div>
+      </aside>
+      <aside class="right-panel">
+        <img
+          src="https://athome.starbucks.com/sites/default/files/styles/story_banner_large/public/2021-08/CAH_AboutUs_Header_2880x1660-%281%29.jpg?h=cf77c377&itok=73y5HNhY"
+        />
+      </aside>
+      <article>
+        <div>
+          <h2>When Was Starbucks Founded?</h2>
+
+          <p>
+            When the first Starbucks opened in 1971, our company was a single
+            store in Seattle's historic Pike Place Market. From just a narrow
+            storefront, Starbucks offered some of the world's finest
+            fresh-roasted whole bean coffees. The name, inspired by Moby Dick,
+            evoked the romance of the high seas and the seafaring tradition of
+            the early coffee traders.
+          </p>
+          <p>
+            In 1981, Howard Schultz (Starbucks former chairman, president and
+            chief executive officer) first walked into a Starbucks store. From
+            his first cup of Sumatra, Howard was drawn into Starbucks and joined
+            a year later.
+          </p>
+          <p>
+            In 1983, Howard traveled to Italy and became captivated with Italian
+            coffee bars and the romance of the coffee experience. He had a
+            vision to bring the Italian café tradition back to the United
+            States. He wanted to create a place for conversation and a sense of
+            community—a third place between work and home. He left the company
+            for a short period of time to start his own Il Giornale cafés and
+            returned in August 1987 to purchase Starbucks with the help of local
+            investors.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="footer">
+      <footer>Copyright &copy; 2027 by Amanda Lim</footer>
+    </section>
+  </body>
+</html>

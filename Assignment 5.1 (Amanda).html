@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assignment 5: Javascript Addition Method</title>
+    <style>
+      div {
+        color: blue;
+        font-size: 30px;
+      }
+    </style>
+    <script>
+      var intro1 = "Number 1: ";
+      var num1 = 42;
+      document.write(intro1 + num1);
+      document.write("<br>");
+      var intro2 = "Number 2: ";
+      var num2 = 21;
+      document.write(intro2 + num2);
+      function addition() {
+        var sum = num1 + num2;
+        document.getElementById("div-id").innerHTML = sum;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Sum of the two numbers:</h1>
+    <div id="div-id"></div>
+    <script>
+      addition();
+    </script>
+  </body>
+</html>

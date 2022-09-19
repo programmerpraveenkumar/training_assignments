@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assignment 6: Chat box</title>
+    <style>
+      .parent {
+        background-color: rgb(179, 179, 235);
+        position: relative;
+        border: 2px solid black;
+        width: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        font-family: monospace;
+      }
+      #past_messages {
+        height: 250px;
+        border: 2px solid rgb(254, 228, 228);
+        margin: 2%;
+        overflow-y: auto;
+      }
+      .message_box {
+        border: 2px solid rgb(0, 0, 0);
+        height: 100px;
+        margin: 2%;
+        overflow: hidden;
+      }
+      #message {
+        width: 100%;
+        height: 100px;
+      }
+      .send_button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(255, 150, 75);
+        width: 20%;
+        padding: 10px;
+        margin: 2%;
+        height: 56px;
+        font-size: 25px;
+        font-family: monospace;
+      }
+      #username_input {
+        margin: 2%;
+        font-size: 25px;
+        /* height: 40px; */
+        border: 2px solid black;
+        height: 50px;
+        width: 50%;
+        font-family: monospace;
+      }
+      textarea {
+        font-size: 25px;
+      }
+      .individual_messages {
+        background-color: rgb(255, 255, 255);
+        border: 2px solid black;
+        background-color: rgb(255, 150, 75);
+        color: beige;
+        margin-top: 5px;
+        margin: 5px;
+        font-size: 25px;
+        display: inline-block;
+        padding: 10px;
+      }
+      .user {
+        background-color: rgb(255, 255, 255);
+        border: 2px solid black;
+        background-color: rgb(75, 210, 255);
+        margin-top: 5px;
+        margin: 5px;
+        font-size: 25px;
+        display: inline-block;
+        padding: 10px;
+        width: 20%;
+        text-align: right;
+      }
+      .send_button:hover {
+        background-color: aquamarine;
+      }
+      @media screen and (max-width: 800px) {
+        .user,
+        .individual_messages,
+        textarea,
+        #username_input,
+        .send_button {
+          font-size: 15px;
+        }
+        .send_button {
+          padding: 5px;
+        }
+      }
+    </style>
+    <script type="text/javascript">
+      var chatMessages = [];
+
+      function addMessage() {
+        let val = document.getElementById("message").value;
+        let author = document.getElementById("username_input").value;
+        if (val.trim() == "") {
+          alert("Please enter a message");
+        } else if (author.trim() == "") {
+          alert("Please enter your username");
+        } else {
+          let tmpMessage = { user: author, message: val };
+          chatMessages.push(tmpMessage);
+          chatMessages.reverse();
+          html = "";
+          for (let obj in chatMessages) {
+            let user = chatMessages[obj]["user"];
+            let mess = chatMessages[obj]["message"];
+            html += '<div class="user">' + user + "</div>";
+            html += '<div class="individual_messages">' + mess + "</div> </br>";
+          }
+          chatMessages.reverse();
+          document.getElementById("past_messages").innerHTML = html;
+          document.getElementById("message").value = "";
+          document.getElementById("username_input").value = "";
+
+          //how to get the past messages to be scrolled to the bottom??
+          //as a go around method, I put the newer messages on top
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="parent">
+      <div id="past_messages"></div>
+      <div class="message_box">
+        <textarea
+          name=""
+          id="message"
+          placeholder="Write a message..."
+        ></textarea>
+      </div>
+      <div>
+        <input id="username_input" type="text" placeholder="Enter Username" />
+        <button class="send_button" onclick="addMessage()">SEND</button>
+      </div>
+    </div>
+  </body>
+</html>

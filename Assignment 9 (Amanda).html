@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      #clock {
+        position: fixed;
+        bottom: 100px;
+        left: 100px;
+      }
+    </style>
+    <title>Assignment 9: Date methods</title>
+    <script>
+      let d = new Date();
+      console.log(d);
+
+      setInterval(() => {
+        let clock = new Date();
+
+        let hours = clock.getHours();
+        let mins = clock.getMinutes();
+        let seconds = clock.getSeconds();
+
+        if (hours < 10) {
+          hours = "0" + hours;
+        }
+        if (mins < 10) {
+          mins = "0" + mins;
+        }
+        if (seconds < 10) {
+          seconds = "0" + seconds;
+        }
+
+        document.getElementById("clock").innerHTML =
+          hours + ":" + mins + ":" + seconds;
+      }, 1000);
+
+      function dateOfBirth() {
+        var dob = document.getElementById("dob").value;
+        if (dob == "") {
+          alert("Input your date of birth!");
+        } else {
+          var today = new Date();
+          var theDate = new Date(dob);
+          let diff = today.getTime() - theDate.getTime();
+          let dd = new Date(diff);
+          let year = dd.getUTCFullYear();
+          let age = Math.abs(year - 1970);
+          document.getElementById(
+            "yourAge"
+          ).innerHTML = `You are ${age} years old.`;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="clock"></h1>
+    <label>Please enter your date of birth</label>
+    <hr />
+    <input type="date" id="dob" onchange="dateOfBirth()" />
+    <button onclick="dateOfBirth()">Click to find your age</button>
+    <div id="yourAge"></div>
+  </body>
+</html>

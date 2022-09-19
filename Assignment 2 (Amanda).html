@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assignment 2: CSS properties</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      h1,
+      h2,
+      form,
+      p {
+        text-align: center;
+      }
+
+      .float-right {
+        float: right;
+      }
+
+      #none {
+        display: none;
+      }
+
+      img {
+        height: 150px;
+      }
+
+      input {
+        width: 50%;
+        color: blue;
+        margin: 20px;
+      }
+
+      form {
+        font-weight: bold;
+        background-color: beige;
+        margin: 50px;
+      }
+
+      h2 {
+        padding: 10px;
+      }
+
+      #button {
+        background-color: gray;
+        color: white;
+      }
+
+      .bordered {
+        border: 50px solid gray;
+      }
+
+      p {
+        text-decoration: underline;
+      }
+
+      #fixed {
+        position: fixed;
+        border: 10px solid red;
+        background-color: whitesmoke;
+        width: 15%;
+        height: 200px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This Heading is Centered</h1>
+    <img
+      class="float-right"
+      src="https://cdn.britannica.com/35/95435-050-A8133D77/Sunflower.jpg"
+      alt="Sunflowers"
+    />
+    <p id="none">This paragraph is not displayed in the webpage.</p>
+    <img
+      src="https://www.gardeners.com/globalassets/articles/gardening/hero_thumbnail/7141-purple-tulips.jpg?$staticlink$"
+      alt="Tulips"
+    />
+    <form action="" method="get">
+      <h2>Login Form</h2>
+      <div>
+        <label for="username">Username</label>
+        <input
+          id="username"
+          class="login-form"
+          placeholder="Enter your username"
+        />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input id="password" placeholder="Enter your password" />
+      </div>
+      <input id="button" type="submit" value="Login" />
+    </form>
+    <p class="bordered">This is a sentence with a border</p>
+    <p>All the paragraphs are underlined.</p>
+    <p id="fixed">This paragraph should stay in the same place</p>
+  </body>
+</html>
