@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <style>
+      .row {
+        text-align: center;
+        padding: 10px;
+      }
+      button {
+        width: 250px;
+      }
+      button:hover {
+        background-color: rgb(109, 207, 207);
+      }
+    </style>
+    <title>Assignment 10: Local and Session Storage</title>
+    <script>
+      function setLocal() {
+        let key = document.getElementById("key").value;
+        let value = document.getElementById("value").value;
+        if (key.trim() == "") {
+          alert("Please enter a key!");
+        } else if (value.trim() == "") {
+          alert("Please enter a value!");
+        } else {
+          localStorage.setItem(key, value);
+          document.getElementById("key").value = "";
+          document.getElementById("value").value = "";
+          console.log(key + ", " + value + " were added to local storage!");
+        }
+      }
+
+      function setSession() {
+        let key = document.getElementById("key").value;
+        let value = document.getElementById("value").value;
+        if (key.trim() == "") {
+          alert("Please enter a key!");
+        } else if (value.trim() == "") {
+          alert("Please enter a value!");
+        } else {
+          sessionStorage.setItem(key, value);
+          document.getElementById("key").value = "";
+          document.getElementById("value").value = "";
+          console.log(key + ", " + value + " were added to session storage!");
+        }
+      }
+
+      function getLocal() {
+        let key = document.getElementById("key").value;
+        if (key.trim() == "") {
+          alert("Please enter a key!");
+        } else {
+          let result = localStorage.getItem(key);
+
+          if (result == null) {
+            console.log("There is no such key.");
+            document.getElementById(
+              "result"
+            ).innerHTML = `<div class="col-3"></div><div class="col-6">The key, '${key}', does not have a value in local storage.</div>`;
+          } else {
+            console.log("Key selected: " + key);
+            console.log("Value selected: " + result);
+            document.getElementById(
+              "result"
+            ).innerHTML = `<div class="col-3"></div><div class="col-3">Key selected: ${key}</div><div class="col-3">Value selected: ${result}</div>`;
+            document.getElementById("key").value = "";
+            document.getElementById("value").value = "";
+            console.log(
+              key + ", " + result + " were retrieved from local storage!"
+            );
+          }
+        }
+      }
+
+      function getSession() {
+        let key = document.getElementById("key").value;
+        if (key.trim() == "") {
+          alert("Please enter a key!");
+        } else {
+          let result = sessionStorage.getItem(key);
+
+          if (result == null) {
+            console.log("There is no such key.");
+            document.getElementById(
+              "result"
+            ).innerHTML = `<div class="col-3"></div><div class="col-6">The key, '${key}', does not have a value in session storage.</div>`;
+          } else {
+            console.log("Key selected: " + key);
+            console.log("Value selected: " + result);
+            document.getElementById(
+              "result"
+            ).innerHTML = `<div class="col-3"></div><div class="col-3">Key selected: ${key}</div><div class="col-3">Value selected: ${result}</div>`;
+            document.getElementById("key").value = "";
+            document.getElementById("value").value = "";
+            console.log(
+              key + ", " + result + " were retrieved from session storage!"
+            );
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-3">
+        <input type="text" placeholder="Enter a key" id="key" />
+      </div>
+      <div class="col-3">
+        <input type="text" placeholder="Enter a value" id="value" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-3">
+        <button onclick="setLocal()">Put into Local Storage</button>
+      </div>
+      <div class="col-3">
+        <button onclick="getLocal()">Get from Local Storage</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-3">
+        <button onclick="setSession()">Put into Session Storage</button>
+      </div>
+      <div class="col-3">
+        <button onclick="getSession()">Get from Session Storage</button>
+      </div>
+    </div>
+    <div id="result" class="row"></div>
+  </body>
+</html>
