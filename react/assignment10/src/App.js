@@ -22,6 +22,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           {/* if you put a url that is not defined here, it does not match with any element here, 
           hence the page will not load and there will be a white colored page.  */}
+          <Route path="" element={<Home />} />
         </Routes>
       </Router>
     </div>
