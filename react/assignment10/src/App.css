@@ -59,3 +59,37 @@ textarea {
   color: antiquewhite;
   background-color: rgb(45, 76, 65);
 }
+
+li.peopleBelow50 {
+  display: inline-block;
+  width: 95%;
+  color: aliceblue;
+  background-color: rgb(37, 62, 53);
+  text-align: center;
+}
+li.peopleAbove50 {
+  display: inline-block;
+  width: 95%;
+  color: aliceblue;
+  background-color: rgb(235, 37, 37);
+  text-align: center;
+}
+.person-result {
+  background-color: rgb(255, 160, 160);
+  text-align: center;
+}
+
+.first-name {
+  display: inline;
+  margin: 10px;
+  padding: 10px;
+}
+
+.selection {
+  text-align: center;
+  margin: 10px;
+}
+
+.center {
+  text-align: center;
+}

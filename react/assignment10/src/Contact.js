@@ -2,9 +2,34 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 function Contact() {
+  // creating an index array of objects
+  let peopleList = [
+    { name: "April", age: 10 },
+    { name: "John", age: 63 },
+    { name: "Summer", age: 43 },
+    { name: "Tim", age: 53 },
+    { name: "June", age: 25 },
+  ];
+
   return (
     <div>
       <Header />
+
+      {/* using map to create dynamic html */}
+      <ul>
+        {peopleList.map((object, index) => {
+          return (
+            <div key={index}>
+              <li
+                className={object.age > 50 ? "peopleAbove50" : "peopleBelow50"}
+              >
+                {object.name} -- {object.age}
+              </li>
+            </div>
+          );
+        })}
+      </ul>
+
       <h1>Contact us for more information...</h1>
       <div className="form">
         <form action="" method="get">
@@ -38,6 +63,7 @@ function Contact() {
           <input type="Submit" />
         </form>
       </div>
+
       <Footer />
     </div>
   );
