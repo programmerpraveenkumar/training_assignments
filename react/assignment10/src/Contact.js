@@ -13,7 +13,7 @@ function Contact() {
 
   return (
     <div>
-      <Header />
+      <Header currentMenu="contact" />
 
       {/* using map to create dynamic html */}
       <ul>

@@ -57,7 +57,7 @@ function About() {
 
   return (
     <div>
-      <Header />
+      <Header currentMenu="about" />
       <h1>About the important things in life...</h1>
 
       <div className="center">

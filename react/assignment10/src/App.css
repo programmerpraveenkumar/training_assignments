@@ -93,3 +93,17 @@ li.peopleAbove50 {
 .center {
   text-align: center;
 }
+.active {
+  background-color: rgb(183, 227, 213);
+}
+td {
+  border: solid black 1px;
+  margin: 10px;
+  padding: 10px;
+}
+.above30 {
+  background-color: aqua;
+}
+.below30 {
+  background-color: bisque;
+}

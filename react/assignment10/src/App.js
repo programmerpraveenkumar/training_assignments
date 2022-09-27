@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
+import HomeClass from "./HomeClass";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="home" element={<Home />} />
           <Route path="aboutlink" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="homeclass" element={<HomeClass />} />
           {/* if you put a url that is not defined here, it does not match with any element here, 
           hence the page will not load and there will be a white colored page.  */}
           <Route path="" element={<Home />} />

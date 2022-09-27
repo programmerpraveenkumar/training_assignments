@@ -41,7 +41,7 @@ function Home() {
   return (
     <div>
       {/* after importing, you can use the component */}
-      <Header />
+      <Header currentMenu="home" />
       <h1>Welcome home...</h1>
 
       <div className="selection">
