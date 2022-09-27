@@ -44,7 +44,7 @@
           var theDate = new Date(dob);
           let diff = today.getTime() - theDate.getTime();
           let dd = new Date(diff);
-          let year = dd.getUTCFullYear();
+          let year = dd.getFullYear();
           let age = Math.abs(year - 1970);
           document.getElementById(
             "yourAge"
